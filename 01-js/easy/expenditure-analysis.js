@@ -9,7 +9,36 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+
+  let ansObj = [];
+
+  for (const transaction of transactions) {
+
+    const category = transaction.category;
+    const price = transaction.price;
+    let found = false;
+
+    for(let i=0; i< ansObj.length; i++) {
+      if(ansObj[i].category === category) {
+        ansObj[i].totalSpent += price;
+        found = true;
+        break;
+      }
+    }
+
+    if(found === false) {
+      let obj = {
+        category: category,
+        totalSpent: price
+      };
+      
+      ansObj.push(obj);
+      found = true;
+    }
+
+  }
+
+  return ansObj;
 }
 
 module.exports = calculateTotalSpentByCategory;
