@@ -7,7 +7,15 @@
   - `npm run test-anagram`
 */
 
+// This requires anagram with ignore case (not case sensitive)
 function isAnagram(str1, str2) {
+
+  if(str1.toLowerCase().split('').sort().join('') 
+    == str2.toLowerCase().split('').sort().join('')) {
+    return true;
+  }
+
+  return false;
 
 }
 
