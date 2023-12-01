@@ -7,6 +7,17 @@
 */
 
 function isPalindrome(str) {
+  if (/\s|[^\w\s]/.test(str)) {
+    // replace all punctuation marks and spaces with ''
+    str=  str.replace(/[^\w\s]/g, '').replace(/\s/g, '');
+  }
+  str = str.toLowerCase();
+  let len = str.length;
+  for(let i=0, j=len-1; i<len/2; i++, j--) {
+    if(str[i] != str[j]) {
+      return false;
+    }
+  }
   return true;
 }
 
