@@ -7,8 +7,24 @@
   - `npm run test-anagram`
 */
 
+
+/*
+To simplify str1.split('').sort().join('')
+let arr1 = str1.split('');   this gives char array, js sort() is available on char arr
+let sort1 = arr1.sort();
+str1 = sort1.join('');     this is again give us the sorted string and now we can compare
+*/
+
 function isAnagram(str1, str2) {
 
+  if(str1.split('').sort().join('') == str2.split('').sort().join('')) {
+    return true;
+  }
+
+  return false;
+
 }
+
+console.log(isAnagram('train', 'raint'));
 
 module.exports = isAnagram;
