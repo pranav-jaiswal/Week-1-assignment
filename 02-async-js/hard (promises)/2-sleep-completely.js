@@ -4,5 +4,13 @@
  */
 
 function sleep (seconds) {
-
+    return new Promise(function(resolve) {
+        setTimeout(resolve, seconds*1000);
+    })
 }
+
+console.log(new Date());
+
+sleep(20).then(function() {
+    console.log(new Date());
+});
